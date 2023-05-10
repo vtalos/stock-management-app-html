@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Saliveros Warehouse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<script defer src="js/script.js"> </script>
+    <link rel="stylesheet" type="text/css" href="css/ex.css">
+    <style> body {background-color: #F5DEB3;} #categories {justify-content: center; } 
+	
+	.list-group-item {
+		padding: 15px;
+		font-size: 1rem;
+		width: 380px;
+		background-color:saddlebrown;
+		color:white;
+    }
+
+
+	.navbar {background-color:linen !important;}
+
+	  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+		  <a class="navbar-brand" href="#">Saliveros</a>
+		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#">Αρχική</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Νέος Κωδικός</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Κατάργηση Κωδικού</a>
+			  </li>
+			  <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				  Ενημέρωση
+				</a>
+				<ul class="dropdown-menu">
+				  <li><a class="dropdown-item" href="#">Προσθήκη Ποσότητας</a></li>
+				  <li><a class="dropdown-item" href="#">Αφαίρεση Ποσότητας</a></li>
+				  <li><hr class="dropdown-divider"></li>
+				  <li><a class="dropdown-item" href="#">Αλλαγή Κωδικού</a></li>
+				</ul>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link disabled">Fabric Codes</a>
+			  </li>
+			</ul>
+			<form class="d-flex" role="search">
+			  <input class="form-control me-2" type="search" placeholder="Αναζήτηση Κωδικού" aria-label="Search">
+			  <button class="btn btn-outline-success" type="submit">Search</button>
+			</form>
+		  </div>
+		</div>
+	  </nav>
+
+	  <br>
+
+      <main class="form w-100 m-auto">
+        <form id="newForm">
+          <img class="mb-4" src="images/logo1.png" alt="Saliveros logo">
+          <h1 class="h3 mb-3 fw-normal" style="text-align: center; font-size: 30px">Ενημέρωση Ποσότητας</h1>
+		  <h2 class="h3 mb-3 fw-normal" style="text-align: left; font-size: 20px;">Επιλέξτε Είδος Υφάσματος</h2>
+		  <div class="form-floating">
+			<select class="form-control" id="kind" required>
+			  <option value="Βαμβάκι">Βαμβάκι</option>
+			  <option value="Μετάξι">Μετάξι</option>
+			  <option value="Πολυεστέρας">Πολυεστέρας</option>
+			</select>
+		  </div>
+		  <br>
+		  <h2 class="h3 mb-3 fw-normal" style="text-align: left; font-size: 20px;">Επιλέξτε τον κωδικό Υφάσματος</h2>
+		  <div class="form-floating">
+			<select class="form-control" id="code" required>
+			  <option value="001">001</option>
+			  <option value="002">002</option>
+			  <option value="003">003</option>
+			</select>
+		  </div>
+		  <br>
+		  <h2 class="h3 mb-3 fw-normal" style="text-align: left; font-size: 20px;">Καταχωρίστε την Ποσότητα</h2>
+          <div class="form-floating">
+            <input type="Ποσότητα" class="form-control" id="quantity" placeholder="Ποσότητα" required>
+          </div>
+          <div class="button-container">
+          <!-- Button trigger modal -->
+			<button type="submit" id="submitBtn" class="btn btn-primary">
+				Υποβολή
+			</button>
+			
+			<!-- Modal1 -->
+			<div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+					<h1 class="modal-title fs-5" id="staticBackdropLabel"><b style="color:  rgb(110, 7, 7);">Λάθος Καταχώρηση! </b></h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+					<b>Παρακαλώ συμπληρώστε όλα τα στοιχεία για τον νέο κωδικό!</b>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Κλείσιμο</button>
+					</div>
+				</div>
+				</div>
+			</div>
+						
+			<!-- Modal2 -->
+			<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="staticBackdropLabel"><b style="color: rgb(13, 122, 40);">Επιτυχής Καταχώρηση! </b></h1>
+					</div>
+					<div class="modal-body">
+					<b>Συγχαρητήρια, η καταχώρηση του νέου κωδικού ολοκληρώθηκε με επιτυχία!</b>
+					</div>
+					<div class="modal-footer">
+					<button id="closeButton" type="button" class="btn btn-primary" data-bs-dismiss="modal">Κλείσιμο</button>
+					</div>
+				</div>
+				</div>
+			</div>
+          <button id="exitButton" type="button" class="btn btn-primary" >Ακύρωση</button>
+        </div>
+
+        </form>
+      </main>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
