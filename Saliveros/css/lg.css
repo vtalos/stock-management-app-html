@@ -1,0 +1,19 @@
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    height: 300px;
+  }
+  .form-label, .form-control {
+    font-size: 20px;
+}
+
+
+
+img {
+    display: block;
+    margin: auto;
+    width: 20%;
+    height: 20%;
+}
