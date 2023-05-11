@@ -1,13 +1,3 @@
-const closeButton = document.getElementById("closeButton");
-const exitButton = document.getElementById("exitButton");
-
-function redirectToHomePage() {
-    window.location.href = "/saliveros.html";
-  }
-  
-exitButton.addEventListener("click", redirectToHomePage);
-closeButton.addEventListener("click", redirectToHomePage);
-
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", function(event) {
   event.preventDefault(); // prevent the default form submission
