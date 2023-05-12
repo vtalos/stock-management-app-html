@@ -9,6 +9,13 @@ form {
     font-size: 20px;
 }
 
+@media (max-width: 250px) {
+  form {
+    height: 350px;
+  }
+
+}
+
 
 
 img {
