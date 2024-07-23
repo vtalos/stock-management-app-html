@@ -1,1 +1,1 @@
-The HTML source code for an application that manages the quantities of raw materials in the warehouse of a company 
+This repository contains the HTML source code for a Warehouse Management System, designed to manage the quantities of raw materials in a textile production company's warehouse. It was developed as part of a group project for the Analysis and Design of Information Systems course.
